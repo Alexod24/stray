@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
-  title: "Stray | Boutique Software Agency",
+  title: "Stray | Creative Digital Agency",
   description:
-    "Crafting high-performance digital masterpieces. Stray is a specialized software agency for premium digital experiences.",
+    "Crafting digital experiences that push boundaries. Creative Engineering for the modern web.",
 };
 
 export default function RootLayout({
@@ -13,8 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="dark">
+      <body className={`${inter.variable} font-sans antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
