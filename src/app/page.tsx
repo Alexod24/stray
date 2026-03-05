@@ -10,7 +10,7 @@ import { CTA } from "@/components/landing/CTA";
 
 export default function Home() {
   return (
-    <div className="bg-gray-900">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Header />
       <main className="isolate">
         <Hero />

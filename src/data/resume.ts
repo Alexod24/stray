@@ -3,9 +3,6 @@ import {
   CpuChipIcon,
   SparklesIcon,
   FingerPrintIcon,
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ArrowPathIcon,
 } from "@heroicons/react/24/outline";
 
 export const resume = {
@@ -14,6 +11,15 @@ export const resume = {
   tagline: "Ingeniería Creativa para los Audaces.",
   description:
     "Stray es un laboratorio digital donde el diseño se encuentra con el rendimiento. Construimos aplicaciones web de alta gama que definen el futuro.",
+
+  hero: {
+    badge: "SISTEMAS EN LÍNEA - V2.0",
+    title: "Ingeniería Creativa para los Audaces.",
+    description:
+      "Diseñamos y construimos experiencias digitales de alta gama con un enfoque implacable en el rendimiento y la estética minimalista.",
+    primaryCta: "Agendar Llamada",
+    secondaryCta: "Nuestros Servicios",
+  },
 
   navigation: [
     { name: "Servicios", href: "#services" },

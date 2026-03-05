@@ -1,105 +1,104 @@
 "use client";
 
-import { useState } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { resume } from "@/data/resume";
+import { ModeToggle } from "@/components/mode-toggle";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("");
+  const { scrollY } = useScroll();
+
+  const headerBg = useTransform(
+    scrollY,
+    [0, 50],
+    ["rgba(255, 255, 255, 0)", "var(--background)"],
+  );
+
+  const headerBorder = useTransform(
+    scrollY,
+    [0, 50],
+    ["rgba(0, 0, 0, 0)", "var(--border)"],
+  );
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50">
+    <motion.header
+      style={{
+        backgroundColor: headerBg,
+        borderBottom: `1px solid ${headerBorder}`,
+      }}
+      className="fixed inset-x-0 top-0 z-50 transition-colors duration-300 backdrop-blur-sm"
+    >
       <nav
         aria-label="Global"
-        className="flex items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5 flex items-center gap-2">
-            <span className="text-2xl font-black text-white tracking-tighter uppercase">
+          <a href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
+            <span className="text-xl font-bold tracking-tighter uppercase text-foreground">
               {resume.shortName}
-              <span className="text-indigo-500">.</span>
+              <span className="text-primary">.</span>
             </span>
           </a>
         </div>
-        <div className="flex lg:hidden">
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200"
-          >
-            <span className="sr-only">Abrir menú</span>
-            <Bars3Icon aria-hidden="true" className="size-6" />
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+
+        <div className="hidden lg:flex lg:gap-x-8">
           {resume.navigation.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="text-sm/6 font-semibold text-white"
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               {item.name}
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href={resume.contact.href}
-            className="text-sm/6 font-semibold text-white"
-          >
-            {resume.contact.cta} <span aria-hidden="true">&rarr;</span>
-          </a>
+
+        <div className="flex flex-1 justify-end items-center gap-4">
+          <ModeToggle />
+          <div className="hidden lg:block">
+            <Button asChild variant="default" size="sm">
+              <a href={resume.contact.href}>{resume.contact.cta}</a>
+            </Button>
+          </div>
+
+          <div className="lg:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <SheetTitle className="text-left mb-8">Menú</SheetTitle>
+                <div className="flex flex-col gap-6 mt-8">
+                  {resume.navigation.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                  <hr className="border-border" />
+                  <Button asChild className="w-full">
+                    <a href={resume.contact.href}>{resume.contact.cta}</a>
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </nav>
-      <Dialog
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-        className="lg:hidden"
-      >
-        <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
-          <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="text-2xl font-black text-white tracking-tighter uppercase">
-                {resume.shortName}
-                <span className="text-indigo-500">.</span>
-              </span>
-            </a>
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-200"
-            >
-              <span className="sr-only">Cerrar menú</span>
-              <XMarkIcon aria-hidden="true" className="size-6" />
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/30">
-              <div className="space-y-2 py-6">
-                {resume.navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-              <div className="py-6">
-                <a
-                  href={resume.contact.href}
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-white hover:bg-white/5"
-                >
-                  {resume.contact.cta}
-                </a>
-              </div>
-            </div>
-          </div>
-        </DialogPanel>
-      </Dialog>
-    </header>
+    </motion.header>
   );
 }

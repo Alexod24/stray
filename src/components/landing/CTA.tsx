@@ -1,51 +1,81 @@
+"use client";
+
 import { resume } from "@/data/resume";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { ArrowRight, Mail } from "lucide-react";
+import RetroGrid from "@/components/magicui/retro-grid";
 
 export function CTA() {
   return (
-    <div className="relative -z-10 mt-32 px-6 lg:px-8">
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 transform-gpu justify-center overflow-hidden blur-3xl sm:top-auto sm:right-[calc(50%-6rem)] sm:bottom-0 sm:translate-y-0 sm:justify-end"
-      >
-        <div
-          style={{
-            clipPath:
-              "polygon(73.6% 48.6%, 91.7% 88.5%, 100% 53.9%, 97.4% 18.1%, 92.5% 15.4%, 75.7% 36.3%, 55.3% 52.8%, 46.5% 50.9%, 45% 37.4%, 50.3% 13.1%, 21.3% 36.2%, 0.1% 0.1%, 5.4% 49.1%, 21.4% 36.4%, 58.9% 100%, 73.6% 48.6%)",
-          }}
-          className="aspect-1108/632 w-277 flex-none bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-25"
-        />
-      </div>
-      <div className="mx-auto max-w-2xl text-center">
-        <h2 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
-          {resume.cta.title} <br /> {resume.cta.subtitle}
-        </h2>
-        <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-gray-300">
-          {resume.cta.description}
-        </p>
-        <div className="mt-10 flex items-center justify-center gap-x-6">
-          <a
-            href="#"
-            className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+    <section id="contact" className="py-24 sm:py-32 overflow-hidden relative">
+      <div className="container mx-auto px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative isolate overflow-hidden bg-foreground rounded-[2.5rem] px-6 py-24 text-center shadow-2xl sm:px-16 border border-border/10"
+        >
+          {/* RetroGrid Background */}
+          <RetroGrid className="opacity-10 dark:opacity-20 absolute inset-0 z-0" />
+
+          {/* Gradient Overlay */}
+          <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,var(--primary)_0%,transparent_100%)] opacity-[0.05]" />
+
+          <motion.h2
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="relative z-10 text-4xl font-bold tracking-tight text-background sm:text-5xl max-w-2xl mx-auto"
           >
-            {resume.cta.primaryCta}
-          </a>
-          <a href="#" className="text-sm/6 font-semibold text-white">
-            {resume.cta.secondaryCta} <span aria-hidden="true">→</span>
-          </a>
-        </div>
+            {resume.cta.title}
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="relative z-10 mx-auto mt-6 max-w-xl text-lg text-background/80 leading-relaxed font-medium"
+          >
+            {resume.cta.description}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-10 flex flex-wrap items-center justify-center gap-6 relative z-10"
+          >
+            <Button
+              asChild
+              size="lg"
+              variant="secondary"
+              className="h-14 px-8 text-lg font-bold shadow-lg"
+            >
+              <a href={resume.contact.href} className="flex items-center gap-2">
+                {resume.cta.primaryCta}
+                <ArrowRight className="h-5 w-5" />
+              </a>
+            </Button>
+            <Button
+              variant="ghost"
+              size="lg"
+              className="h-14 px-8 text-lg font-bold text-background hover:bg-background/10 hover:text-background border-background/20"
+            >
+              <a
+                href="mailto:hola@stray.lab"
+                className="flex items-center gap-2"
+              >
+                <Mail className="h-5 w-5" />
+                Email directo
+              </a>
+            </Button>
+          </motion.div>
+        </motion.div>
       </div>
-      <div
-        aria-hidden="true"
-        className="absolute top-full right-0 left-1/2 -z-10 hidden -translate-y-1/2 transform-gpu overflow-hidden blur-3xl sm:block"
-      >
-        <div
-          style={{
-            clipPath:
-              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-          }}
-          className="aspect-1155/678 w-288.75 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-        />
-      </div>
-    </div>
+    </section>
   );
 }

@@ -1,26 +1,55 @@
+"use client";
+
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { resume } from "@/data/resume";
+import { motion } from "framer-motion";
 
 export function FAQ() {
   return (
-    <div className="mx-auto max-w-2xl px-6 pb-8 sm:pt-12 sm:pb-24 lg:max-w-7xl lg:px-8 lg:pb-32">
-      <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-        {resume.faqs.title}
-      </h2>
-      <dl className="mt-20 divide-y divide-white/10">
-        {resume.faqs.items.map((faq) => (
-          <div
-            key={faq.id}
-            className="py-8 first:pt-0 last:pb-0 lg:grid lg:grid-cols-12 lg:gap-8"
+    <section id="faq" className="py-24 sm:py-32">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <dt className="text-base/7 font-semibold text-white lg:col-span-5">
-              {faq.question}
-            </dt>
-            <dd className="mt-4 lg:col-span-7 lg:mt-0">
-              <p className="text-base/7 text-gray-400">{faq.answer}</p>
-            </dd>
-          </div>
-        ))}
-      </dl>
-    </div>
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              {resume.faqs.title}
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <Accordion type="single" collapsible className="w-full space-y-4">
+              {resume.faqs.items.map((faq) => (
+                <AccordionItem
+                  key={faq.id}
+                  value={`item-${faq.id}`}
+                  className="border border-border rounded-xl px-4 bg-card/30 backdrop-blur-sm"
+                >
+                  <AccordionTrigger className="text-left font-bold text-lg hover:no-underline hover:text-primary transition-colors py-6">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
 }

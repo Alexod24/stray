@@ -2,15 +2,15 @@ import { resume } from "@/data/resume";
 
 export function Footer() {
   return (
-    <footer className="relative mx-auto mt-32 max-w-7xl px-6 lg:px-8">
-      <div className="border-t border-white/10 py-16 sm:py-24 lg:py-32">
+    <footer className="relative mx-auto mt-32 max-w-7xl px-6 lg:px-8 border-t border-border">
+      <div className="py-12 sm:py-16">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="flex flex-col gap-4">
-            <span className="text-2xl font-black text-white tracking-tighter uppercase">
+            <span className="text-xl font-bold text-foreground tracking-tighter uppercase">
               {resume.shortName}
-              <span className="text-indigo-500">.</span>
+              <span className="text-primary">.</span>
             </span>
-            <p className="text-sm text-gray-500 max-w-xs">
+            <p className="text-sm text-muted-foreground max-w-xs">
               {resume.footer.description}
             </p>
           </div>
@@ -23,15 +23,15 @@ export function Footer() {
                     category.title === "Soporte" ? "mt-10 md:mt-0" : ""
                   }
                 >
-                  <h3 className="text-sm/6 font-semibold text-white uppercase tracking-widest text-xs">
+                  <h3 className="text-xs font-bold text-foreground uppercase tracking-widest">
                     {category.title}
                   </h3>
-                  <ul role="list" className="mt-6 space-y-4">
+                  <ul role="list" className="mt-4 space-y-2">
                     {category.links.map((item) => (
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-sm/6 text-gray-400 hover:text-white"
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                         >
                           {item.name}
                         </a>
@@ -47,15 +47,15 @@ export function Footer() {
                   key={category.title}
                   className={category.title === "Legal" ? "mt-10 md:mt-0" : ""}
                 >
-                  <h3 className="text-sm/6 font-semibold text-white uppercase tracking-widest text-xs">
+                  <h3 className="text-xs font-bold text-foreground uppercase tracking-widest">
                     {category.title}
                   </h3>
-                  <ul role="list" className="mt-6 space-y-4">
+                  <ul role="list" className="mt-4 space-y-2">
                     {category.links.map((item) => (
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-sm/6 text-gray-400 hover:text-white"
+                          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                         >
                           {item.name}
                         </a>
@@ -67,12 +67,12 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-16 border-t border-white/5 pt-8 flex justify-between items-center whitespace-nowrap overflow-hidden">
-          <p className="text-xs text-gray-600 uppercase font-black tracking-widest">
+        <div className="mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-muted-foreground uppercase tracking-widest">
             {resume.footer.copyright}
           </p>
-          <div className="flex gap-4">
-            <span className="text-[10px] text-indigo-500 font-black tracking-widest animate-pulse">
+          <div className="flex items-center gap-4">
+            <span className="text-[10px] text-primary font-bold tracking-widest uppercase">
               {resume.footer.status}
             </span>
           </div>
