@@ -2,7 +2,7 @@
 
 > **"Don't stay on the path. Build a better one."**
 
-Esta es la landing page oficial de **Stray**, una agencia de software de alto rendimiento especializada en arquitecturas modernas, IA y escalabilidad radical.
+Esta es la landing page oficial de **Stray**, una agencia de software de alto rendimiento especializada en arquitecturas modernas, IA y escalabilidad radical con un enfoque diferente a lo que se haya visto hoy en dia por que soy el elegido.
 
 ---
 
