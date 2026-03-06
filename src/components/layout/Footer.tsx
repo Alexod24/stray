@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { resume } from "@/data/resume";
 
 export function Footer() {
@@ -6,10 +7,19 @@ export function Footer() {
       <div className="py-12 sm:py-16">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="flex flex-col gap-4">
-            <span className="text-xl font-bold text-foreground tracking-tighter uppercase">
-              {resume.shortName}
-              <span className="text-primary">.</span>
-            </span>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/logo/logo-redondo-white.png"
+                alt={resume.name}
+                width={32}
+                height={32}
+                className="h-8 w-auto"
+              />
+              <span className="text-xl font-bold text-foreground tracking-tighter uppercase">
+                {resume.shortName}
+                <span className="text-primary">.</span>
+              </span>
+            </div>
             <p className="text-sm text-muted-foreground max-w-xs">
               {resume.footer.description}
             </p>

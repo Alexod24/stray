@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { resume } from "@/data/resume";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -43,6 +44,13 @@ export function Header() {
       >
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
+            <Image
+              src="/logo/logo-redondo-white.png"
+              alt={resume.name}
+              width={40}
+              height={40}
+              className="h-10 w-auto"
+            />
             <span className="text-xl font-bold tracking-tighter uppercase text-foreground">
               {resume.shortName}
               <span className="text-primary">.</span>
