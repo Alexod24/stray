@@ -24,6 +24,7 @@ Esta es la landing page oficial de **Stray**, una agencia de software de alto re
 - **AI-Ready:** Estructura preparada para integración de modelos LLM.
 - **Clean Architecture:** Separación clara de componentes, hooks y servicios.
 - **Dark Mode Optimized:** Diseñado para la estética moderna de la industria tech.
+- **Animation Optimized:** Diseñado con animaciones que te dejaran sin palabras.
 
 ---
 
