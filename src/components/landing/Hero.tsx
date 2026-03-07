@@ -13,7 +13,7 @@ import { Safari } from "@/components/ui/safari";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background pt-20 pb-24 md:pt-32 md:pb-32">
+    <section className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-background pt-32 pb-20 md:pt-40 md:pb-24">
       <Particles
         className="absolute inset-0 z-0"
         quantity={200}

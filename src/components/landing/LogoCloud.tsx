@@ -19,7 +19,7 @@ export function LogoCloud() {
   const secondRow = allLogos.slice(Math.ceil(allLogos.length / 2));
 
   return (
-    <section className="py-24 border-y border-border/50 bg-muted/5 overflow-hidden">
+    <section className="relative z-10 py-24 border-y border-border/50 bg-background overflow-hidden">
       <div className="container mx-auto px-6 lg:px-8">
         <motion.p
           initial={{ opacity: 0 }}
@@ -37,7 +37,7 @@ export function LogoCloud() {
                 key={`${logo.name}-${idx}`}
                 alt={logo.name}
                 src={logo.src}
-                className="h-9 w-auto px-12 grayscale opacity-40 hover:opacity-100 transition-all duration-300 dark:invert"
+                className="h-9 w-auto px-12 opacity-70 hover:opacity-100 transition-all duration-300"
               />
             ))}
           </Marquee>
@@ -48,7 +48,7 @@ export function LogoCloud() {
                 key={`${logo.name}-${idx}`}
                 alt={logo.name}
                 src={logo.src}
-                className="h-9 w-auto px-12 grayscale opacity-40 hover:opacity-100 transition-all duration-300 dark:invert"
+                className="h-9 w-auto px-12 opacity-70 hover:opacity-100 transition-all duration-300"
               />
             ))}
           </Marquee>
