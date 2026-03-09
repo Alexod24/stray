@@ -7,6 +7,7 @@ import { Testimonial } from "@/components/landing/Testimonial";
 import { Pricing } from "@/components/landing/Pricing";
 import { FAQ } from "@/components/landing/FAQ";
 import { CTA } from "@/components/landing/CTA";
+import { Services } from "@/components/landing/Services";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <main className="isolate">
         <Hero />
         <LogoCloud />
+        <Services />
         <Features />
         <Testimonial />
         <Pricing />
