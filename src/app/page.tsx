@@ -8,6 +8,7 @@ import { Pricing } from "@/components/landing/Pricing";
 import { FAQ } from "@/components/landing/FAQ";
 import { CTA } from "@/components/landing/CTA";
 import { Services } from "@/components/landing/Services";
+import { Logos } from "@/components/landing/Logos";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <LogoCloud />
         <Services />
+        <Logos />
         <Features />
         <Testimonial />
         <Pricing />
