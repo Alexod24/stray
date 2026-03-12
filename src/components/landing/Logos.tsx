@@ -1,5 +1,5 @@
 "use client";
 
-export function Services() {
+export function Logos() {
   return <div></div>;
 }

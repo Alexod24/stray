@@ -37,3 +37,4 @@ Si vas a tocar este código, hazlo con precisión.
    git clone [https://github.com/tu-usuario/stray-landing.git](https://github.com/tu-usuario/stray-landing.git)
    ```
    Nuevos cambios en Stray en colab con Arxatec
+   Tenemos que agregar nuevas funciones y una mejor interfaz
