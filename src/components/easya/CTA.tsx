@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
-export function CTA() {
+export default function CTA() {
   return (
     <section className="py-24 bg-background px-6">
       <div className="container mx-auto">
@@ -13,7 +12,6 @@ export function CTA() {
           viewport={{ once: true }}
           className="relative rounded-[3rem] overflow-hidden bg-black border border-white/5 p-12 md:p-24 text-center group"
         >
-          {/* Background image placeholder */}
           <div className="absolute inset-0 opacity-30 grayscale group-hover:grayscale-0 transition-all duration-1000">
              <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2070" 
@@ -25,11 +23,11 @@ export function CTA() {
 
           <div className="relative z-10 max-w-2xl mx-auto">
             <p className="text-lg md:text-xl text-white/80 mb-8 font-medium">
-              If you're a new project looking to supercharge your developer pipeline, we'd love to hear from you! We have limited availability for new projects, but we'd love to see how we can decentralise the web together!
+              If you're a new project looking to supercharge your developer pipeline, we'd love to hear from you!
             </p>
-            <Button className="h-16 px-12 bg-primary text-black hover:bg-primary/90 rounded-2xl text-lg font-bold">
+            <button className="h-16 px-12 bg-primary text-black hover:bg-primary/90 rounded-2xl text-lg font-bold">
               Partner with us
-            </Button>
+            </button>
           </div>
         </motion.div>
       </div>

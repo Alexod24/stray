@@ -1,31 +1,27 @@
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { Hero } from "@/components/landing/Hero";
-import { LogoCloud } from "@/components/landing/LogoCloud";
-import { Features } from "@/components/landing/Features";
-import { Testimonial } from "@/components/landing/Testimonial";
-import { Pricing } from "@/components/landing/Pricing";
-import { FAQ } from "@/components/landing/FAQ";
-import { CTA } from "@/components/landing/CTA";
-import { Services } from "@/components/landing/Services";
-import { Logos } from "@/components/landing/Logos";
+import Navbar from "@/components/easya/Navbar";
+import Hero from "@/components/easya/Hero";
+import BentoFeatures from "@/components/easya/BentoFeatures";
+import Partners from "@/components/easya/Partners";
+import LearnByDoing from "@/components/easya/LearnByDoing";
+import Events from "@/components/easya/Events";
+import Testimonials from "@/components/easya/Testimonials";
+import PartnerCTA from "@/components/easya/PartnerCTA";
+import AppDownload from "@/components/easya/AppDownload";
+import Footer from "@/components/easya/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-      <Header />
-      <main className="isolate">
-        <Hero />
-        <LogoCloud />
-        <Services />
-        <Logos />
-        <Features />
-        <Testimonial />
-        <Pricing />
-        <FAQ />
-        <CTA />
-      </main>
+    <main className="min-h-screen bg-[#0a0a0a]">
+      <Navbar />
+      <Hero />
+      <BentoFeatures />
+      <Partners />
+      <LearnByDoing />
+      <Events />
+      <PartnerCTA />
+      <Testimonials />
+      <AppDownload />
       <Footer />
-    </div>
+    </main>
   );
 }

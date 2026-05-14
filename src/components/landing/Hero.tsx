@@ -1,94 +1,70 @@
 "use client";
 
-import { resume } from "@/data/resume";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight } from "lucide-react";
-import LettersPullUp from "@/components/magicui/letters-pull-up";
-import { BorderBeam } from "@/components/magicui/border-beam";
-import { Particles } from "@/components/ui/particles";
-import { AnimatedGradientText } from "@/components/ui/animated-gradient-text";
-import { ShimmerButton } from "@/components/ui/shimmer-button";
-import { Safari } from "@/components/ui/safari";
+import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative flex w-full flex-col items-center justify-center overflow-hidden bg-background pt-32 pb-20 md:pt-40 md:pb-24">
-      <Particles
-        className="absolute inset-0 z-0"
-        quantity={200}
-        ease={80}
-        color="#ffffff"
-        refresh
-      />
+    <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background pt-32 pb-20">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-[radial-gradient(circle_at_50%_40%,rgba(0,242,147,0.1),transparent_70%)]" />
+      <div className="absolute top-[30%] left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(circle_at_50%_50%,rgba(157,80,187,0.05),transparent_70%)]" />
 
       <div className="container relative z-10 mx-auto px-6 text-center lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="mb-8 flex justify-center"
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-6xl font-bold tracking-tighter text-white sm:text-9xl mb-8 max-w-4xl mx-auto leading-[0.9]"
         >
-          <AnimatedGradientText>
-            <span className="flex items-center gap-1.5 px-4 py-1.5 text-sm font-medium">
-              ✨ {resume.hero.badge}
-              <ChevronRight className="h-3.5 w-3.5 text-muted-foreground transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
-            </span>
-          </AnimatedGradientText>
-        </motion.div>
-
-        <LettersPullUp
-          text={resume.hero.title}
-          className="text-4xl font-extrabold tracking-tight text-foreground sm:text-7xl mb-8 max-w-4xl mx-auto"
-        />
+          Discover your path to Web3
+        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="mx-auto mb-10 max-w-2xl text-lg text-muted-foreground sm:text-xl leading-relaxed"
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="mx-auto mb-12 max-w-2xl text-xl text-white/60 sm:text-2xl leading-relaxed font-medium"
         >
-          {resume.hero.description}
+          Learn about the world's leading blockchains, right from your phone.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1 }}
-          className="flex flex-wrap items-center justify-center gap-6 mb-20"
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="flex flex-wrap items-center justify-center gap-4 mb-16"
         >
-          <a href="#contact" className="block">
-            <ShimmerButton className="shadow-2xl h-12 px-8">
-              <span className="flex items-center gap-2 whitespace-pre-wrap text-center text-sm font-bold leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-base">
-                {resume.hero.primaryCta}
-                <ArrowRight className="h-4 w-4" />
-              </span>
-            </ShimmerButton>
-          </a>
-          <Button
-            variant="ghost"
-            size="lg"
-            className="h-12 px-8 text-base font-bold border-border hover:bg-muted/50 transition-colors"
-          >
-            <a href="#services">{resume.hero.secondaryCta}</a>
-          </Button>
+          <button className="h-14 px-8 rounded-xl bg-white/10 border border-white/20 backdrop-blur-md flex items-center gap-3 hover:bg-white/20 transition-all">
+            <div className="text-left">
+              <div className="text-[10px] uppercase font-bold text-white/60">Download on the</div>
+              <div className="text-lg font-bold text-white">App Store</div>
+            </div>
+          </button>
+          <button className="h-14 px-8 rounded-xl bg-white/10 border border-white/20 backdrop-blur-md flex items-center gap-3 hover:bg-white/20 transition-all">
+            <div className="text-left">
+              <div className="text-[10px] uppercase font-bold text-white/60">Get it on</div>
+              <div className="text-lg font-bold text-white">Google Play</div>
+            </div>
+          </button>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.2 }}
-          className="relative mx-auto mt-12 max-w-5xl px-2"
-        >
-          <div className="relative rounded-xl border border-border/50 bg-background/50 p-2 backdrop-blur-xl shadow-2xl overflow-hidden">
-            <Safari
-              url="stray.digital"
-              className="h-full w-full"
-              imageSrc="https://images.unsplash.com/photo-1551288049-bbbda536ad41?auto=format&fit=crop&q=80&w=2070"
-            />
-            <BorderBeam size={250} duration={12} delay={9} />
+        {/* Floating Assets Placeholder */}
+        <div className="relative w-full max-w-6xl mx-auto h-[400px] mt-12 pointer-events-none">
+          <motion.div
+            animate={{ y: [0, -20, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-primary/40 to-purple-500/40 rounded-3xl blur-2xl opacity-50"
+          />
+          <motion.div
+            animate={{ y: [0, 20, 0] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-0 right-0 w-48 h-48 bg-gradient-to-br from-blue-500/40 to-primary/40 rounded-3xl blur-3xl opacity-50"
+          />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(0,242,147,0.15),transparent_70%)]" />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
