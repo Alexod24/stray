@@ -26,7 +26,7 @@ export default function Footer() {
               STRAY
             </div>
             <div className="text-sm text-white/30 font-medium">
-              © 2025 STRAY. All Rights Reserved
+              © 2025 STRAY. Todos los derechos reservados
             </div>
           </div>
 
@@ -57,10 +57,10 @@ export default function Footer() {
             {/* Links */}
             <div className="flex flex-wrap justify-end gap-6 md:gap-8">
               <Link href="#" className="text-sm font-bold text-white/60 hover:text-white transition-colors">
-                Terms of Service
+                Términos de Servicio
               </Link>
               <Link href="#" className="text-sm font-bold text-white/60 hover:text-white transition-colors">
-                Privacy Policy
+                Política de Privacidad
               </Link>
               <a href="mailto:hello@stray.io" className="text-sm font-bold text-white/60 hover:text-white transition-colors">
                 hello@stray.io

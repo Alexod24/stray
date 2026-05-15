@@ -52,15 +52,13 @@ export default function LearnByDoing() {
                   </div>
                   
                   <h4 className="text-xl font-bold text-white leading-tight">
-                    Now, update the code to print something (anything!) in this Solana program
+                    Desplegando infraestructura escalable en tiempo récord
                   </h4>
 
                   <div className="bg-[#161b22] rounded-xl p-4 font-mono text-[10px] text-white/60 space-y-1">
-                    <p><span className="text-orange-400">use</span> solana_program::{"{"}</p>
-                    <p className="pl-4">account_info::AccountInfo,</p>
-                    <p className="pl-4 text-blue-400">entrypoint,</p>
-                    <p className="pl-4">entrypoint::ProgramResult,</p>
-                    <p className="pl-4">pubkey::Pubkey,</p>
+                    <p><span className="text-orange-400">const</span> deploy = <span className="text-blue-400">async</span> () {"=>"} {"{"}</p>
+                    <p className="pl-4">await stray.engine.scale();</p>
+                    <p className="pl-4">console.log(<span className="text-green-400">"Production ready"</span>);</p>
                     <p>{"};"}</p>
                   </div>
 
@@ -93,28 +91,28 @@ export default function LearnByDoing() {
             {/* Right Column: Text & Stats */}
             <div className="order-1 lg:order-2">
               <span className="inline-block px-4 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-                Learn by doing
+                Ejecución Radical
               </span>
               
-              <h2 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter leading-none" style={{ fontFamily: "var(--font-orbitron)" }}>
-                Read less.<br />Build more.
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-8 tracking-tighter leading-none">
+                Piensa menos.<br />Ejecuta más.
               </h2>
               
               <p className="text-xl text-white/50 mb-12 leading-relaxed font-bold tracking-tight">
-                Spend less time reading boring docs and more time building! Learn and launch your project right from your phone and follow in the footsteps of STRAY builders who've been funded by a16z, YC and many more world-leading VCs.
+                El mercado no espera a las estrategias perfectas. En STRAY, transformamos ideas en productos funcionales y campañas de marketing de alto impacto en semanas, no meses. Nuestra metodología está diseñada para la velocidad terminal.
               </p>
 
               {/* Comparison Stats */}
               <div className="space-y-8">
                 <div className="flex flex-col gap-4">
                    <div className="flex justify-between items-center">
-                     <span className="text-white/40 text-sm font-bold">Devs on STRAY learn up to 100x faster</span>
+                     <span className="text-white/40 text-sm font-bold">STRAY ejecuta hasta 100x más rápido</span>
                    </div>
                    
                    <div className="space-y-6">
                       <div className="space-y-2">
                         <div className="flex justify-between text-[10px] font-bold text-white/40 uppercase tracking-widest">
-                          <span>Other learning apps</span>
+                          <span>Agencias tradicionales</span>
                           <span>1x</span>
                         </div>
                         <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
@@ -124,7 +122,7 @@ export default function LearnByDoing() {
                       
                       <div className="space-y-2">
                         <div className="flex justify-between text-[10px] font-bold text-white uppercase tracking-widest">
-                          <span>STRAY</span>
+                          <span>STRAY Velocity</span>
                           <span className="text-primary">100x</span>
                         </div>
                         <div className="h-3 w-full bg-white/5 rounded-full overflow-hidden p-0.5">

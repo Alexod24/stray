@@ -23,7 +23,7 @@ export default function BentoFeatures() {
             ))}
           </div>
           <p className="text-white/60 font-bold text-sm tracking-tight">
-            Join <span className="text-primary">258,031</span> others building now
+            Únete a las marcas que están <span className="text-primary">redefiniendo</span> el mercado
           </p>
         </motion.div>
 
@@ -42,9 +42,9 @@ export default function BentoFeatures() {
               <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-primary/10 blur-[100px] rounded-full group-hover:bg-primary/20 transition-all duration-700" />
               
               <div className="flex-1">
-                <h3 className="text-5xl font-black text-white mb-6 uppercase tracking-tighter" style={{ fontFamily: "var(--font-orbitron)" }}>Fast</h3>
+                <h3 className="text-3xl font-black text-white mb-6 uppercase tracking-tighter">Rendimiento</h3>
                 <p className="text-lg text-white/50 max-w-sm leading-relaxed font-bold tracking-tight">
-                  No time? No problem! STRAY teaches you how to build with top blockchains and deploy dApps faster than you can say "WAGMI"!
+                  Software que vuela. Optimizamos cada línea de código para que tu negocio escale sin fricción técnica.
                 </p>
               </div>
 
@@ -52,28 +52,28 @@ export default function BentoFeatures() {
                 {/* Progress Card 1 */}
                 <div className="bg-[#161b22]/80 backdrop-blur-md rounded-2xl p-5 border border-white/10 transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-[10px] font-black text-primary uppercase tracking-widest px-2 py-1 bg-primary/10 rounded-full">In Progress</span>
+                    <span className="text-[10px] font-black text-primary uppercase tracking-widest px-2 py-1 bg-primary/10 rounded-full">Optimizando</span>
                     <div className="w-8 h-8 rounded-full border-2 border-primary/30 flex items-center justify-center">
-                       <span className="text-[10px] text-white">2/4</span>
+                       <span className="text-[10px] text-white">99</span>
                     </div>
                   </div>
-                  <div className="text-[15px] font-black text-white mb-1">Intro to Solana</div>
-                  <div className="text-[10px] text-white/40 uppercase font-bold">Ends Nov 30, 2023</div>
+                  <div className="text-[15px] font-black text-white mb-1">Core Web Vitals</div>
+                  <div className="text-[10px] text-white/40 uppercase font-bold">LCP: 0.8s</div>
                 </div>
                 
                 {/* Progress Card 2 */}
                 <div className="bg-[#161b22]/80 backdrop-blur-md rounded-2xl p-5 border border-white/10 transform rotate-[1deg] translate-x-4">
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-[10px] font-black text-purple-400 uppercase tracking-widest px-2 py-1 bg-purple-400/10 rounded-full">Completed</span>
+                    <span className="text-[10px] font-black text-purple-400 uppercase tracking-widest px-2 py-1 bg-purple-400/10 rounded-full">Escalado</span>
                     <CheckCircle2 className="w-6 h-6 text-purple-400" />
                   </div>
-                  <div className="text-[15px] font-black text-white mb-1">Front-End Build</div>
-                  <div className="text-[10px] text-white/40 uppercase font-bold">Ends Dec 30, 2023</div>
+                  <div className="text-[15px] font-black text-white mb-1">Infraestructura Edge</div>
+                  <div className="text-[10px] text-white/40 uppercase font-bold">Global Deployment</div>
                 </div>
 
                 {/* CTA Card */}
                 <div className="bg-[#161b22]/80 backdrop-blur-md rounded-2xl p-4 border border-white/10 flex items-center justify-between group/btn cursor-pointer">
-                   <div className="text-sm font-bold text-white/60">Deploy your Smart Contract</div>
+                   <div className="text-sm font-bold text-white/60">Ver auditoría técnica</div>
                    <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center group-hover/btn:bg-primary/40 transition-colors">
                      <Play className="w-4 h-4 text-primary fill-primary" />
                    </div>
@@ -97,31 +97,31 @@ export default function BentoFeatures() {
                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
                     <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
                   </div>
-                  <p className="text-orange-300">pub fn <span className="text-blue-400">process_instruction</span>(</p>
-                  <p className="pl-4">program_id: &Pubkey,</p>
-                  <p className="pl-4">accounts: &[AccountInfo],</p>
-                  <p className="pl-4">instruction_data: &[u8],</p>
-                  <p>) {"->"} ProgramResult {"{"}</p>
-                  <p className="pl-4 text-zinc-500">// Print something here</p>
+                  <p className="text-orange-300">class <span className="text-blue-400">StrayEngine</span> {"{"}</p>
+                  <p className="pl-4">async <span className="text-green-400">solveComplexity</span>(problem) {"{"}</p>
+                  <p className="pl-8 text-zinc-500">// Implementando arquitectura de vanguardia</p>
+                  <p className="pl-8">return await this.ai.optimize(problem);</p>
+                  <p className="pl-4">{"}"}</p>
+                  <p>{"}"}</p>
                 </div>
                 
                 {/* Choice List */}
                 <div className="space-y-2">
                   <div className="p-3 rounded-xl border border-primary bg-primary/5 flex items-center gap-3">
                     <CheckCircle2 className="w-4 h-4 text-primary" />
-                    <span className="text-xs font-bold text-white">println!("Hello World");</span>
+                    <span className="text-xs font-bold text-white">Full-Stack Development</span>
                   </div>
                   <div className="p-3 rounded-xl border border-white/5 bg-white/5 flex items-center gap-3 opacity-50">
                     <div className="w-4 h-4 rounded-full border border-white/20" />
-                    <span className="text-xs font-bold text-white">print("Hello World");</span>
+                    <span className="text-xs font-bold text-white">AI Integration</span>
                   </div>
                 </div>
               </div>
 
               <div className="flex-1 text-left">
-                <h3 className="text-5xl font-black text-white mb-6 uppercase tracking-tighter" style={{ fontFamily: "var(--font-orbitron)" }}>In-depth</h3>
+                <h3 className="text-3xl font-black text-white mb-6 uppercase tracking-tighter">Ingeniería</h3>
                 <p className="text-lg text-white/50 leading-relaxed font-bold tracking-tight">
-                  Learning can be tough, but STRAY makes it, well, easy! With our simple but super effective challenges, you'll go from zero to blockchain hero without breaking a sweat.
+                  Construimos soluciones técnicas robustas que otros consideran imposibles. Desde MVPs hasta sistemas distribuidos.
                 </p>
               </div>
             </motion.div>
@@ -144,20 +144,20 @@ export default function BentoFeatures() {
                  <div className="w-16 h-4 bg-[#161b22] rounded-full" />
               </div>
               <div className="flex-1 p-6 flex flex-col items-center justify-center text-center space-y-6">
-                <div className="text-white/40 text-xs font-bold uppercase tracking-widest">Intro to Solana</div>
+                <div className="text-white/40 text-xs font-bold uppercase tracking-widest">Growth Marketing</div>
                 <div className="w-20 h-20 bg-primary/20 rounded-2xl flex items-center justify-center border border-primary/30">
-                   <Play className="w-8 h-8 text-primary fill-primary" />
+                   <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" className="w-10 opacity-60" />
                 </div>
                 <div className="space-y-2">
-                   <div className="text-xs font-black text-white">Become a pro</div>
-                   <div className="text-[10px] text-white/40 font-bold">Solana dev</div>
+                   <div className="text-xs font-black text-white">ROAS +400%</div>
+                   <div className="text-[10px] text-white/40 font-bold">Scaling Campaign</div>
                 </div>
               </div>
             </div>
 
-            <h3 className="text-5xl font-black text-white mb-6 uppercase tracking-tighter" style={{ fontFamily: "var(--font-orbitron)" }}>Structured</h3>
+            <h3 className="text-4xl font-black text-white mb-6 uppercase tracking-tighter">Marketing</h3>
             <p className="text-lg text-white/50 leading-relaxed font-bold tracking-tight">
-              Not sure where to start? Our learning experts from Harvard, Stanford and other top universities have designed each challenge series to help you learn as quickly and efficiently as possible.
+              Marketing de guerrilla digital. No compramos anuncios, compramos atención y resultados medibles.
             </p>
           </motion.div>
 

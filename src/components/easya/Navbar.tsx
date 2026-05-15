@@ -15,7 +15,6 @@ export default function Navbar() {
       <Link href="/" className="flex items-center group">
         <span
           className="text-[20px] font-black text-white uppercase tracking-[0.5em] leading-none"
-          style={{ fontFamily: "var(--font-orbitron)" }}
         >
           Stray
         </span>
@@ -28,30 +27,30 @@ export default function Navbar() {
             href="#"
             className="text-[13px] font-medium text-white/90 hover:text-white transition-colors tracking-wide"
           >
-            Meet the team
+            Servicios
           </Link>
           <Link
             href="#"
             className="text-[13px] font-medium text-white/90 hover:text-white transition-colors tracking-wide"
           >
-            Events
+            Proyectos
           </Link>
           <Link
             href="#"
             className="text-[13px] font-medium text-white/90 hover:text-white transition-colors tracking-wide"
           >
-            Challenges
+            Manifesto
           </Link>
           <Link
             href="#"
             className="text-[13px] font-medium text-white/90 hover:text-white transition-colors tracking-wide"
           >
-            Blog
+            Contacto
           </Link>
         </div>
 
         <button className="bg-white text-black hover:bg-white/90 px-6 py-2.5 rounded-[6px] text-[13px] font-bold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-          Download App
+          Inicia la Disrupción
         </button>
       </div>
     </motion.nav>

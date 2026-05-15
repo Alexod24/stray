@@ -2,125 +2,128 @@
 
 import { motion } from "framer-motion";
 
-const FloatingIcon = ({ className, delay = 0, icon, blur = false, size = "w-12 h-12" }: { className: string; delay?: number; icon: string; blur?: boolean; size?: string }) => {
+const FloatingCard = ({ className, delay = 0, icon, blur = false, size = "w-10 h-10", rotate = 0, z = 0 }: { className: string; delay?: number; icon: string; blur?: boolean; size?: string; rotate?: number; z?: number }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.5, y: 50 }}
+      initial={{ opacity: 0, scale: 0.8, y: 20 }}
       animate={{ 
         opacity: 1, 
         scale: 1,
-        y: [0, -30, 0],
-        rotate: [0, 5, -5, 0]
+        y: [0, -20, 0],
+        rotate: [rotate, rotate + 2, rotate - 2, rotate]
       }}
       transition={{ 
-        duration: 8, 
+        duration: 6 + Math.random() * 4, 
         delay, 
         repeat: Infinity, 
         ease: "easeInOut"
       }}
-      className={`absolute z-30 group ${className} ${blur ? 'blur-[3px]' : ''}`}
+      style={{ zIndex: z }}
+      className={`absolute ${className} ${blur ? 'blur-[8px]' : ''}`}
     >
-      <div className="relative p-6 bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-[2.5rem] shadow-[0_0_60px_rgba(255,255,255,0.05)] hover:border-white/30 transition-all overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-        <img src={icon} alt="Blockchain icon" className={`${size} object-contain opacity-40 group-hover:opacity-100 transition-all`} />
+      <div className="relative p-6 bg-[#1a1a1a]/80 backdrop-blur-3xl border border-white/10 rounded-[2rem] shadow-2xl transition-all overflow-hidden group hover:border-white/30">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-50" />
+        <img src={icon} alt="Tech icon" className={`${size} object-contain transition-all group-hover:scale-110`} />
       </div>
     </motion.div>
   );
 };
 
 export function Hero() {
-  const icons = [
-    { icon: "https://cryptologos.cc/logos/tezos-xtz-logo.png", className: "top-[25%] left-[10%] rotate-[-12deg]", delay: 0.5, size: "w-14 h-14" },
-    { icon: "https://cryptologos.cc/logos/polkadot-new-dot-logo.png", className: "top-[20%] right-[15%] rotate-[15deg]", delay: 1.2, blur: true },
-    { icon: "https://cryptologos.cc/logos/algorand-algo-logo.png", className: "bottom-[35%] left-[15%] rotate-[8deg]", delay: 0.8 },
-    { icon: "https://cryptologos.cc/logos/binance-coin-bnb-logo.png", className: "top-[45%] right-[10%] rotate-[-10deg]", delay: 2.1, size: "w-16 h-16" },
-    { icon: "https://cryptologos.cc/logos/solana-sol-logo.png", className: "bottom-[45%] right-[25%] rotate-[12deg]", delay: 1.8, blur: true },
-    { icon: "https://cryptologos.cc/logos/ethereum-eth-logo.png", className: "top-[15%] left-[30%] rotate-[20deg]", delay: 1.5, blur: true },
-    { icon: "https://cryptologos.cc/logos/cardano-ada-logo.png", className: "bottom-[30%] right-[15%] rotate-[-15deg]", delay: 2.5 },
+  const cards = [
+    // Background / Small cards
+    { icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg", className: "top-[20%] left-[15%]", rotate: -15, delay: 0.5, size: "w-8 h-8", z: 10 },
+    { icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg", className: "top-[25%] right-[20%]", rotate: 10, delay: 1.2, size: "w-8 h-8", z: 10 },
+    
+    // Midground / Clear cards
+    { icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg", className: "bottom-[40%] left-[20%]", rotate: 12, delay: 0.8, size: "w-12 h-12", z: 30 },
+    { icon: "https://cdn.worldvectorlogo.com/logos/next-js.svg", className: "bottom-[35%] right-[25%]", rotate: -8, delay: 2.1, size: "w-14 h-14", z: 30 },
+    { icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg", className: "top-[45%] left-[25%]", rotate: -5, delay: 1.5, size: "w-10 h-10", z: 30 },
+    
+    // Foreground / Blurred / Large cards
+    { icon: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg", className: "top-[10%] left-[-5%]", rotate: 25, delay: 0, blur: true, size: "w-20 h-20", z: 50 },
+    { icon: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", className: "bottom-[10%] right-[-5%]", rotate: -20, delay: 1, blur: true, size: "w-24 h-24", z: 50 },
   ];
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-[#020202] pt-40 pb-32">
-      {/* Background Image & Effects */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="/hero-bg.png" 
-          alt="Hero Background" 
-          className="w-full h-full object-cover opacity-40 scale-105 animate-pulse-slow"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020202] via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(16,185,129,0.1),transparent_60%)]" />
+    <section className="relative min-h-screen w-full overflow-hidden bg-black pt-40 pb-32">
+      {/* Volumetric Beams / Glows */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Central Beams */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1000px] h-[800px] bg-[conic-gradient(from_180deg_at_50%_100%,transparent_0deg,rgba(16,185,129,0.05)_20deg,rgba(139,92,246,0.05)_40deg,transparent_60deg)] blur-[60px]" />
+        
+        {/* Glow Spots */}
+        <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px]" />
       </div>
 
       <div className="container relative z-20 mx-auto px-6 text-center">
-        {/* Main Text */}
+        {/* Main Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-12"
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="mb-16"
         >
-          <h1 
-            className="text-6xl md:text-[9rem] font-black text-white leading-[0.8] tracking-tight mb-8 drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]"
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
-            Discover your<br />path to Web3
+          <h1 className="text-4xl md:text-7xl font-black text-white mb-8 tracking-tight leading-[1.05]">
+            STRAY: EL GLITCH<br />EN EL SISTEMA
           </h1>
-          <p className="text-lg md:text-xl text-white/40 font-medium max-w-xl mx-auto mb-10 leading-snug">
-            Learn about the world's leading blockchains, right from your phone.
+          <p className="text-lg md:text-xl text-white/50 font-medium max-w-2xl mx-auto mb-12 leading-relaxed">
+            No somos una agencia. Somos un laboratorio de ingeniería y marketing diseñado para marcas que no se conforman con el promedio.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6">
-            <button className="h-14 px-8 rounded-2xl bg-black/40 backdrop-blur-xl border border-white/10 flex items-center gap-3 hover:border-white/30 hover:bg-white/5 transition-all">
-               <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-8" />
+            <button className="h-14 px-10 rounded-2xl bg-white text-black font-black uppercase tracking-widest hover:scale-105 transition-all">
+               Ver Proyectos
             </button>
-            <button className="h-14 px-8 rounded-2xl bg-black/40 backdrop-blur-xl border border-white/10 flex items-center gap-3 hover:border-white/30 hover:bg-white/5 transition-all">
-               <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-8" />
+            <button className="h-14 px-10 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 text-white font-black uppercase tracking-widest hover:bg-white/10 transition-all">
+               Agendar Llamada
             </button>
           </div>
         </motion.div>
 
-        {/* The Visual Scene */}
-        <div className="relative h-[650px] w-full max-w-6xl mx-auto perspective-1000 mt-20">
+        {/* Visual Scene */}
+        <div className="relative h-[600px] w-full max-w-6xl mx-auto mt-20">
           
-          {/* Floating Phone Case */}
+          {/* Main Stage / Screen */}
           <motion.div
-            initial={{ rotateX: 60, y: 100, opacity: 0 }}
-            animate={{ rotateX: 45, y: 0, opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[550px] bg-gradient-to-b from-white/10 to-transparent rounded-[4rem] border-2 border-white/10 shadow-[0_0_120px_rgba(255,255,255,0.05)] overflow-hidden backdrop-blur-sm"
+            initial={{ opacity: 0, y: 50, rotateX: 20 }}
+            animate={{ opacity: 1, y: 0, rotateX: 10 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] md:w-[500px] h-[350px] md:h-[500px] bg-white/[0.02] backdrop-blur-3xl border border-white/10 rounded-[4rem] shadow-[0_0_100px_rgba(255,255,255,0.05)] flex items-center justify-center p-12 overflow-hidden"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_70%)]" />
-            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-emerald-500/10 to-transparent" />
+             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent" />
+             <div className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-8">
+                <div className="w-24 h-24 bg-white/5 rounded-3xl border border-white/20 flex items-center justify-center">
+                   <div className="w-12 h-12 bg-white rounded-xl shadow-[0_0_30px_rgba(255,255,255,0.5)]" />
+                </div>
+                <div className="w-32 h-2 bg-white/10 rounded-full" />
+             </div>
           </motion.div>
 
-          {/* Floating Icons Overlay */}
-          <div className="absolute inset-0 z-50">
-            {icons.map((icon, i) => (
-              <FloatingIcon key={i} {...icon} />
+          {/* Floating Cards */}
+          <div className="absolute inset-0">
+            {cards.map((card, i) => (
+              <FloatingCard key={i} {...card} />
             ))}
+          </div>
+
+          {/* People Silhouettes */}
+          <div className="absolute bottom-[-50px] left-1/2 -translate-x-1/2 w-full flex justify-center gap-12 z-40 opacity-40">
+             <div className="w-16 h-32 bg-black rounded-t-full relative">
+                <div className="absolute top-[-10px] left-1/2 -translate-x-1/2 w-10 h-10 bg-black rounded-full" />
+             </div>
+             <div className="w-16 h-32 bg-black rounded-t-full relative scale-95 translate-y-2">
+                <div className="absolute top-[-10px] left-1/2 -translate-x-1/2 w-10 h-10 bg-black rounded-full" />
+             </div>
           </div>
 
         </div>
       </div>
 
       <style jsx>{`
-        .perspective-1000 {
-          perspective: 2500px;
-        }
-        @keyframes spin-slow {
-          from { transform: translate(-50%, -50%) rotate(0deg); }
-          to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.3; transform: scale(1.05); }
-          50% { opacity: 0.5; transform: scale(1.1); }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 30s linear infinite;
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 10s ease-in-out infinite;
+        section {
+          perspective: 1200px;
         }
       `}</style>
     </section>

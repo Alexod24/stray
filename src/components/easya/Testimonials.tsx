@@ -6,30 +6,30 @@ import { useState, useRef, useEffect } from "react";
 const testimonials = [
   {
     id: 1,
-    name: "Jeremy",
-    role: "Harvard University Student",
-    university: "HARVARD UNIVERSITY",
+    name: "Carlos",
+    role: "CEO de Nexus Retail",
+    university: "E-COMMERCE SCALE",
     logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield.svg/1200px-Harvard_shield.svg.png",
-    quote: "On behalf of the entire team here, we wanted to extend a sincere thank you for all of your support during the earliest stages of the Lockbox. The two hackathons we did last semester were monumental in turning a random late-night idea into a functional MVP.",
-    image: "https://images.unsplash.com/photo-1523050335102-c32509145260?auto=format&fit=crop&q=80&w=1000",
+    quote: "STRAY no es una agencia, es un socio tecnológico. Rediseñaron nuestra infraestructura en 3 semanas y las conversiones subieron un 40% inmediatamente. Su enfoque en el rendimiento es simplemente brutal.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000",
   },
   {
     id: 2,
-    name: "Vivian",
-    role: "MIT Student",
-    university: "MIT",
+    name: "Sofia",
+    role: "Founder de TechStream",
+    university: "SAAS ARCHITECTURE",
     logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/2560px-MIT_logo.svg.png",
-    quote: "Thanks for the incredible event to bring together people from different backgrounds and provide a platform for stimulating discussions and ideas! ✨",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=1000",
+    quote: "Buscábamos una arquitectura que pudiera escalar a millones de usuarios sin romper el presupuesto. STRAY entregó una solución que superó todas nuestras expectativas técnicas.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=1000",
   },
   {
     id: 3,
-    name: "Alex",
-    role: "Stanford Student",
-    university: "STANFORD",
+    name: "Marco",
+    role: "CTO de GlobalLogistics",
+    university: "LOGISTICS TECH",
     logo: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Stanford_University_seal.svg/1200px-Stanford_University_seal.svg.png",
-    quote: "The energy at the hackathon was unlike anything I've experienced. Connecting with top-tier developers and mentors helped us ship our project in record time. Truly a world-class experience!",
-    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=1000",
+    quote: "La velocidad de ejecución es lo que los separa del resto. Logramos lanzar nuestra plataforma MVP en tiempo récord gracias a su dominio de las últimas tecnologías y AI.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=1000",
   }
 ];
 
@@ -56,10 +56,9 @@ export default function Testimonials() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-black text-white tracking-tighter"
-            style={{ fontFamily: "var(--font-orbitron)" }}
+            className="text-3xl md:text-4xl font-black text-white tracking-tighter"
           >
-            Testimonials
+            Lo que dicen nuestros socios
           </motion.h2>
 
           <div className="flex gap-2">

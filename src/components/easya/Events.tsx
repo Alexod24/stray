@@ -5,31 +5,31 @@ import { Trophy, MapPin, ArrowRight } from "lucide-react";
 
 const events = [
   {
-    title: "STRAY Consensus Miami Hackathon",
-    location: "MIAMI, FL",
-    prizes: "$200,000 USD",
-    date: "5 May - 7 May 2026",
-    duration: "72 hours",
-    image: "file:///C:/Users/alexl/.gemini/antigravity/brain/00837e23-17e8-48cb-aba1-ae68053354ac/hackathon_event_1_1778647742664.png",
-    partner: "CoinDesk",
+    title: "E-commerce de Alto Rendimiento",
+    location: "RETAIL TECH",
+    prizes: "+300% ROI",
+    date: "Optimización Core",
+    duration: "Full Scale",
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop",
+    partner: "Growth",
   },
   {
-    title: "STRAY Consensus Hong Kong Hackathon",
-    location: "HONG KONG, HK",
-    prizes: "$58,000 USD",
-    date: "10 Feb - 12 Feb 2026",
-    duration: "48 hours",
-    image: "file:///C:/Users/alexl/.gemini/antigravity/brain/00837e23-17e8-48cb-aba1-ae68053354ac/hackathon_event_2_1778647775776.png",
-    partner: "CoinDesk",
+    title: "Arquitectura Cloud & SaaS",
+    location: "SOFTWARE ENG",
+    prizes: "99.9% Uptime",
+    date: "Sistemas Distribuidos",
+    duration: "Enterprise",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop",
+    partner: "Scale",
   },
   {
-    title: "Hack-O-Ween Hackathon",
-    location: "BOSTON, USA",
-    prizes: "$25,000 USD",
-    date: "25 Oct - 26 Oct 2025",
-    duration: "36 hours",
-    image: "file:///C:/Users/alexl/.gemini/antigravity/brain/00837e23-17e8-48cb-aba1-ae68053354ac/hackathon_event_3_1778647804197.png",
-    partner: "Stellar",
+    title: "Motores de IA en Marketing",
+    location: "DATA SCIENCE",
+    prizes: "+50% Leads",
+    date: "Machine Learning",
+    duration: "Disruptivo",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop",
+    partner: "Future",
   },
 ];
 
@@ -42,19 +42,19 @@ export default function Events() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div className="space-y-4">
             <div className="flex items-center gap-4">
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter" style={{ fontFamily: "var(--font-orbitron)" }}>
-                Featured Events
+              <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter">
+                Nuestro Ecosistema
               </h2>
               <a href="#" className="flex items-center gap-2 text-white/40 font-bold hover:text-white transition-colors pt-2">
-                See all events <ArrowRight className="w-4 h-4" />
+                Ver servicios <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
           
           {/* Toggle */}
           <div className="bg-[#161b22] p-1 rounded-full flex border border-white/5">
-            <button className="px-6 py-2 rounded-full bg-white text-black text-sm font-black transition-all">Events</button>
-            <button className="px-6 py-2 rounded-full text-white/40 text-sm font-black hover:text-white transition-all">Challenges</button>
+            <button className="px-6 py-2 rounded-full bg-white text-black text-sm font-black transition-all">Ingeniería</button>
+            <button className="px-6 py-2 rounded-full text-white/40 text-sm font-black hover:text-white transition-all">Marketing</button>
           </div>
         </div>
 
@@ -103,7 +103,7 @@ export default function Events() {
                   <div className="flex items-center gap-2 text-purple-400 mb-6">
                     <Trophy className="w-5 h-5 fill-purple-400/20" />
                     <span className="text-xl font-black">{event.prizes}</span>
-                    <span className="text-sm font-bold text-white/40">in total prizes</span>
+                    <span className="text-sm font-bold text-white/40">de impacto</span>
                   </div>
 
                   <div className="flex items-center gap-1.5 mb-6">
@@ -122,7 +122,7 @@ export default function Events() {
                   </div>
 
                   <button className="mt-8 w-full py-4 rounded-xl border border-white/10 text-sm font-black text-white hover:bg-white/5 transition-all">
-                    View Details
+                    Ver más
                   </button>
                 </div>
               </div>

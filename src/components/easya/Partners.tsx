@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 export default function Partners() {
   const universities = [
-    { name: "HARVARD UNIVERSITY", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield.svg/1200px-Harvard_shield.svg.png" },
-    { name: "UNIVERSITY OF CAMBRIDGE", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/University_of_Cambridge_coat_of_arms.svg/1200px-University_of_Cambridge_coat_of_arms.svg.png" },
-    { name: "BROWN", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/Brown_University_coat_of_arms.svg/1200px-Brown_University_coat_of_arms.svg.png" },
-    { name: "DARTMOUTH", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Dartmouth_College_shield.svg/1200px-Dartmouth_College_shield.svg.png" },
-    { name: "Yale", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Yale_University_Shield.svg/1200px-Yale_University_Shield.svg.png" },
-    { name: "UNIVERSITY OF OXFORD", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Oxford_University_Coat_of_Arms.svg/1200px-Oxford_University_Coat_of_Arms.svg.png" },
-    { name: "MIT", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/2560px-MIT_logo.svg.png" },
-    { name: "PRINCETON UNIVERSITY", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Princeton_shield.svg/1200px-Princeton_shield.svg.png" },
+    { name: "CLIENTE PREMIUM", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Harvard_shield.svg/1200px-Harvard_shield.svg.png" },
+    { name: "GLOBAL PARTNER", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f4/University_of_Cambridge_coat_of_arms.svg/1200px-University_of_Cambridge_coat_of_arms.svg.png" },
+    { name: "TECH INNOVATION", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/Brown_University_coat_of_arms.svg/1200px-Brown_University_coat_of_arms.svg.png" },
+    { name: "LUXURY BRAND", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Dartmouth_College_shield.svg/1200px-Dartmouth_College_shield.svg.png" },
+    { name: "ENTERPRISE SOLUTIONS", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Yale_University_Shield.svg/1200px-Yale_University_Shield.svg.png" },
+    { name: "CREATIVE STUDIO", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Oxford_University_Coat_of_Arms.svg/1200px-Oxford_University_Coat_of_Arms.svg.png" },
+    { name: "DIGITAL FUTURE", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/2560px-MIT_logo.svg.png" },
+    { name: "GROWTH SCALE", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/7/71/Princeton_shield.svg/1200px-Princeton_shield.svg.png" },
   ];
 
   return (
@@ -33,10 +33,9 @@ export default function Partners() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-6xl font-black text-white mb-8 tracking-tighter leading-[0.9]"
-            style={{ fontFamily: "var(--font-orbitron)" }}
+            className="text-3xl md:text-4xl font-black text-white mb-8 tracking-tighter leading-[0.9]"
           >
-            Top VCs back<br />STRAY projects.
+            Marcas que desafían<br />lo convencional.
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, x: -20 }}
@@ -45,9 +44,7 @@ export default function Partners() {
             transition={{ delay: 0.1 }}
             className="text-lg text-white/60 leading-relaxed font-bold tracking-tight"
           >
-            Our developers have been funded by a16z, YC and many more world-leading investors. 
-            So whether you're just casually getting into blockchain or building the Facebook of Web3, 
-            there's no better place to start.
+            Nuestros clientes no solo buscan una agencia; buscan una ventaja competitiva desleal. Hemos ayudado a marcas a romper el ruido del mercado y dominar su categoría mediante ingeniería de precisión y marketing disruptivo.
           </motion.p>
         </div>
 
@@ -58,7 +55,7 @@ export default function Partners() {
             viewport={{ once: true }}
             className="text-white/60 font-bold text-sm tracking-widest uppercase"
           >
-            We've given away more than $500k+ to top developers globally
+            Hemos generado más de $10M en valor para nuestros clientes este año
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">

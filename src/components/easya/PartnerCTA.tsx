@@ -3,14 +3,14 @@
 import { motion } from "framer-motion";
 
 const partners = [
-  { name: "Algorand", logo: "https://cryptologos.cc/logos/algorand-algo-logo.png?v=032" },
-  { name: "Immutable", logo: "https://cryptologos.cc/logos/immutable-x-imx-logo.png?v=032" },
-  { name: "Polygon", logo: "https://cryptologos.cc/logos/polygon-matic-logo.png?v=032" },
-  { name: "BNB Chain", logo: "https://cryptologos.cc/logos/binance-coin-bnb-logo.png?v=032" },
-  { name: "Polkadot", logo: "https://cryptologos.cc/logos/polkadot-new-dot-logo.png?v=032" },
-  { name: "Solana", logo: "https://cryptologos.cc/logos/solana-sol-logo.png?v=032" },
-  { name: "Tezos", logo: "https://cryptologos.cc/logos/tezos-xtz-logo.png?v=032" },
-  { name: "Klaytn", logo: "https://cryptologos.cc/logos/klaytn-klay-logo.png?v=032" },
+  { name: "React / Next.js", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
+  { name: "Node.js / Bun", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" },
+  { name: "Python / AI", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
+  { name: "TypeScript", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" },
+  { name: "PostgreSQL", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" },
+  { name: "Docker / K8s", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" },
+  { name: "AWS / Google Cloud", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+  { name: "Meta Ads / Google", logo: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" },
 ];
 
 export default function PartnerCTA() {
@@ -32,10 +32,9 @@ export default function PartnerCTA() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black text-white mb-6 leading-[1.1] tracking-tighter"
-            style={{ fontFamily: "var(--font-orbitron)" }}
+            className="text-3xl md:text-5xl font-black text-white mb-6 leading-[1.1] tracking-tighter"
           >
-            Looking to attract<br />the world's best devs?
+            ¿Buscas escalar tu marca<br />al siguiente nivel?
           </motion.h2>
 
           <motion.p 
@@ -45,8 +44,7 @@ export default function PartnerCTA() {
             transition={{ delay: 0.1 }}
             className="text-lg md:text-xl text-white/60 mb-10 max-w-2xl leading-relaxed"
           >
-            If you're a new project looking to supercharge your developer pipeline, we'd love to hear from you! 
-            We have limited availability for new projects, but we'd love to see how we can decentralise the web together!
+            Estamos seleccionando proyectos con visión de futuro para implementar estrategias de ingeniería y marketing de alto rendimiento. Cupos limitados para asegurar la excelencia en cada ejecución.
           </motion.p>
 
           <motion.div
@@ -56,7 +54,7 @@ export default function PartnerCTA() {
             transition={{ delay: 0.2 }}
           >
             <button className="h-14 px-10 bg-[#34d399] text-black hover:bg-[#34d399]/90 rounded-xl text-lg font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(52,211,153,0.3)]">
-              Partner with us
+              Trabaja con nosotros
             </button>
           </motion.div>
         </div>
@@ -68,7 +66,7 @@ export default function PartnerCTA() {
             viewport={{ once: true }}
             className="text-xl font-bold text-white mb-8"
           >
-            Our Partners
+            Tecnologías que dominamos
           </motion.h3>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6">
